@@ -3,7 +3,7 @@ from datetime import datetime
 
 def obter_resposta(texto: str) -> str:
     comando: str = texto.lower()
-
+"""""
     if comando in ('olá', 'boa tarde', 'bom dia'):
         return 'Olá tudo bem!'
     if comando == 'como estás':
@@ -20,9 +20,9 @@ def obter_resposta(texto: str) -> str:
         return f'Hoje é dia: {datetime.now():%d-%m-%Y}'
 
     return f'Desculpa, não entendi a questão! {texto}'
-
 """
-    respostas = {
+
+respostas = {
         ('olá', 'boa tarde', 'bom dia'): 'Olá tudo bem!',
         'como estás': 'Estou bem, obrigado!',
         'capital de portugal': "Lisboa",
@@ -32,21 +32,21 @@ def obter_resposta(texto: str) -> str:
         'historia de portugal': 'Portugal tem uma rica história...',
     }
 
-    for chave, resposta in respostas.items():
+for chave, resposta in respostas.items():
         if isinstance(chave, tuple):
             if comando in chave:
                 return resposta
         elif chave in comando:
             return resposta
 
-    if 'horas' in comando:
-        return f'São: {datetime.now():%H:%M} horas'
+if 'horas' in comando:
+    return f'São: {datetime.now():%H:%M} horas'
 
     if 'data' in comando:
         return f'Hoje é dia: {datetime.now():%d-%m-%Y}'
 
     return f'Desculpa, não entendi a questão! {texto}'
-"""
+
 
 
 def chat() -> None:
